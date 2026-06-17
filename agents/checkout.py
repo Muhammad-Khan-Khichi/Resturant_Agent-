@@ -42,6 +42,7 @@ class Checkout(BaseAgent):
                 "- NEVER call to_greeter unless the user explicitly says they want to cancel.\n"
                 "- NEVER transfer to checkout again you are already in checkout.\n"
                 "- If the user seems frustrated, calmly ask for the next missing piece only."
+                "- When order is PROCESSED SPEAK THAT YOUR ORDER IS PROCESSED"
             ),
             llm=openai.LLM(
                 model="mistral-small-latest",

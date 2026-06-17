@@ -60,3 +60,29 @@ async def search_knowledge(query: str,context: RunContext_T,) -> str:
     results = search(query)
 
     return "\n".join(results)
+
+@function_tool()
+async def _calculate_total(self, items: list[str]) -> float:
+    """Calculate total by querying ChromaDB for each item's price."""
+    import re
+    from rag.vectorstore import collection 
+    
+    collection = collection()
+    total = 0.0
+    
+    for item in items:
+        try:
+            results = collection.query(
+                query_texts=[item],
+                n_results=1,
+            )
+            if results and results["documents"] and results["documents"][0]:
+                doc_text = results["documents"][0][0]
+                # Extract price like "Price: $5" from the text
+                match = re.search(r'Price:\s*\$(\d+\.?\d*)', doc_text)
+                if match:
+                    total += float(match.group(1))
+        except Exception:
+            pass
+    
+    return round(total, 2)

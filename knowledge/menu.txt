@@ -1,33 +1,125 @@
-BURGER SECTION
-Classic Burger: Grilled beef patty, lettuce, tomato, cheese, mayo sauce. Price: $5
-Chicken Burger: Crispy chicken fillet, lettuce, mayo. Price: $6
-Zinger Burger: Spicy crispy chicken fillet, lettuce, spicy mayo. Price: $7
-Double Cheese Burger: Double beef patty, double cheese, special sauce. Price: $8
+============================================================
+               THE GRILL HOUSE — MENU
+============================================================
 
-FRIES & SIDES
-Regular Fries: Crispy golden fries. Price: $2
-Large Fries: Extra portion crispy fries. Price: $3
-Loaded Fries: Fries topped with cheese sauce and jalapenos. Price: $5
-Chicken Nuggets (6 pcs): Crispy chicken bites. Price: $4
-Chicken Nuggets (12 pcs): Family pack nuggets. Price: $7
+------------------------------------------------------------
+  BURGERS
+------------------------------------------------------------
+Classic Burger
+  Juicy grilled beef patty, fresh lettuce, tomato,
+  melted cheese & creamy mayo
+  Price: $5
 
-PIZZA SECTION
-Margherita Pizza: Cheese, tomato sauce, oregano. Price: $8
-Pepperoni Pizza: Pepperoni slices, cheese, tomato base. Price: $10
-Chicken Supreme Pizza: Chicken, onions, capsicum, cheese. Price: $11
-Veggie Pizza: Capsicum, olives, mushrooms, cheese. Price: $9
+Chicken Burger
+  Golden crispy chicken fillet, crisp lettuce
+  & signature mayo
+  Price: $6
 
-DRINKS
-Coke: Chilled soft drink. Price: $1
-Sprite: Lemon-lime soda. Price: $1
-Water Bottle: Mineral water. Price: $1
-Milkshake: Chocolate / Vanilla / Strawberry. Price: $3
+Zinger Burger
+  Fiery crispy chicken fillet, fresh lettuce
+  & house spicy mayo
+  Price: $7
 
-DESSERTS
-Ice Cream Cone: Vanilla soft serve. Price: $2
-Sundae: Ice cream with chocolate or caramel topping. Price: $3
-Chocolate Brownie: Warm chocolate brownie cake. Price: $4
+Double Cheese Burger
+  Double beef patty, double melted cheese
+  & our secret special sauce
+  Price: $8
 
-COMBOS
-Burger Combo: Burger + Fries + Drink (Save $2)
-Family Meal: 2 Burgers + 2 Fries + 2 Drinks (Save $5)
+------------------------------------------------------------
+  FRIES & SIDES
+------------------------------------------------------------
+Regular Fries
+  Crispy golden fries, lightly salted
+  Price: $2
+
+Large Fries
+  Extra-large portion of crispy golden fries
+  Price: $3
+
+Loaded Fries
+  Crispy fries smothered in cheese sauce & pickled jalapenos
+  Price: $5
+
+Chicken Nuggets (6 pcs)
+  Tender crispy chicken bites with dipping sauce
+  Price: $4
+
+Chicken Nuggets (12 pcs)
+  Family-size crispy chicken bites with dipping sauce
+  Price: $7
+
+------------------------------------------------------------
+  PIZZAS
+------------------------------------------------------------
+Margherita Pizza
+  Classic tomato base, mozzarella cheese & fresh oregano
+  Price: $8
+
+Pepperoni Pizza
+  Generous pepperoni slices, mozzarella & rich tomato base
+  Price: $10
+
+Chicken Supreme Pizza
+  Seasoned chicken, onions, capsicum & melted mozzarella
+  Price: $11
+
+Veggie Delight Pizza
+  Capsicum, black olives, mushrooms & melted mozzarella
+  Price: $9
+
+------------------------------------------------------------
+  DRINKS
+------------------------------------------------------------
+Coke
+  Ice-cold refreshing Coca-Cola
+  Price: $1
+
+Sprite
+  Chilled lemon-lime soda
+  Price: $1
+
+Water Bottle
+  Chilled mineral water
+  Price: $1
+
+Milkshake (Chocolate / Vanilla / Strawberry)
+  Rich & creamy blended milkshake
+  Price: $3
+
+------------------------------------------------------------
+  DESSERTS
+------------------------------------------------------------
+Ice Cream Cone
+  Smooth vanilla soft serve in a crispy cone
+  Price: $2
+
+Sundae
+  Creamy ice cream with warm chocolate or caramel drizzle
+  Price: $3
+
+Chocolate Brownie
+  Warm, fudgy chocolate brownie — served fresh
+  Price: $4
+
+------------------------------------------------------------
+  COMBOS & DEALS
+------------------------------------------------------------
+Burger Combo
+  Any Burger + Regular Fries + Drink
+  Save $2
+
+Family Meal
+  2 Burgers + 2 Regular Fries + 2 Drinks
+  Save $5
+
+Pizza Night
+  Any Pizza + 2 Drinks
+  Save $2
+
+Nugget Box
+  12 Nuggets + Large Fries + 2 Drinks
+  Save $3
+
+============================================================
+        Thank you for dining with us!
+============================================================

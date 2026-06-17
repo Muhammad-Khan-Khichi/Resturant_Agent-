@@ -6,7 +6,12 @@ def search(query: str) -> list[str]:
     
     try:
         with open(menu_path, "r", encoding="utf-8") as f:
-            content = f.read()
-        return [content]
+            lines = f.readlines()
+        
+        # Filter lines that contain the query (case-insensitive)
+        results = [line.strip() for line in lines if query.lower() in line.lower()]
+        
+        return results if results else [f"No items found for '{query}'"]
+    
     except Exception as e:
         return [f"Menu not available: {e}"]

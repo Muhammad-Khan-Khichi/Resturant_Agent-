@@ -2,7 +2,7 @@ from typing import Annotated
 import os
 from livekit.agents import RunContext
 from livekit.agents.llm import function_tool
-from livekit.plugins import openai, elevenlabs
+from livekit.plugins import openai, cartesia
 from pydantic import Field
 
 from agents.base import BaseAgent
@@ -33,6 +33,7 @@ class Takeaway(BaseAgent):
                 "- Call to_checkout ONLY after update_order is done and customer confirms\n"
                 "- Do NOT mention checkout until customer says they are done ordering"
                 "- WHEN YOU REPEAT THE PHONE NUMBER DON'T SAY ONE HUNDRED TWENTY FOUR say like 03011238094"
+                "- ANSWER repeatedly don't add delay Response quickly"
             ),
             llm=openai.LLM(
                 model="mistral-small-latest",
@@ -40,7 +41,7 @@ class Takeaway(BaseAgent):
                 api_key=os.environ.get("MISTRAL_API_KEY"),
             ),
             tools=[to_greeter, search_knowledge],
-            tts=elevenlabs.TTS(),
+            tts=cartesia.TTS(),
         )
 
     @function_tool()

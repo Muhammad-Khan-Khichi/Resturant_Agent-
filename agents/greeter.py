@@ -1,7 +1,7 @@
 from livekit.agents import RunContext
 from livekit.agents.llm import function_tool
 
-from livekit.plugins import openai, elevenlabs 
+from livekit.plugins import openai, cartesia 
 import os
 
 from agents.base import BaseAgent
@@ -40,7 +40,7 @@ class Greeter(BaseAgent):
                 base_url="https://api.mistral.ai/v1",
                 api_key=os.environ.get("MISTRAL_API_KEY"),
             ),
-            tts=elevenlabs.TTS(),
+            tts=cartesia.TTS(),
         )
 
     @function_tool()

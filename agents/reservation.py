@@ -2,7 +2,7 @@ from typing import Annotated
 
 from livekit.agents import RunContext
 from livekit.agents.llm import function_tool
-from livekit.plugins import elevenlabs
+from livekit.plugins import cartesia
 import os
 import smtplib
 from email.mime.text import MIMEText
@@ -36,7 +36,7 @@ class Reservation(BaseAgent):
                 api_key=os.environ.get("MISTRAL_API_KEY"),
             ),
             tools=[update_name, update_phone, to_greeter],
-            tts=elevenlabs.TTS(),
+            tts=cartesia.TTS(),
         )
 
     @function_tool()

@@ -5,7 +5,9 @@ from livekit.agents import AgentServer, AgentSession, JobContext, cli
 from livekit.plugins import silero
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 from livekit.plugins import openai
-from livekit.plugins import deepgram, cartesia
+from livekit.plugins import cartesia
+from livekit.plugins import elevenlabs
+from livekit.plugins import assemblyai
 
 from agents import Greeter, Reservation, Takeaway, Checkout
 from userdata import UserData
@@ -31,13 +33,13 @@ async def entrypoint(ctx: JobContext):
 
     session = AgentSession[UserData](
         userdata=userdata,
-        stt=deepgram.STT(model="deepgram/nova-3"),
+        stt=assemblyai.STT(),
         llm=openai.LLM(
             model="mistral-small-latest",
             base_url="https://api.mistral.ai/v1",
             api_key=os.environ.get("MISTRAL_API_KEY"),
         ),
-        tts=cartesia.TTS(model="cartesia/sonic-3"),
+        tts=elevenlabs.TTS(),
         vad=silero.VAD.load(),
         turn_detection=MultilingualModel(), 
         max_tool_steps=5,

@@ -1,0 +1,28 @@
+OPENING HOURS:
+Restaurant is open from 10:00 AM to 11:00 PM daily.
+
+ORDER POLICY:
+- Orders can be modified before checkout.
+- Once checkout is complete, order cannot be changed.
+
+RESERVATION POLICY:
+- Reservations recommended on weekends.
+- Table held for 15 minutes only after reservation time.
+
+PAYMENT POLICY:
+- Payment is collected at checkout stage.
+- Cash and card payments supported (simulation in system).
+
+REFUND POLICY:
+- Refunds only applicable before order preparation starts.
+
+DELIVERY POLICY:
+- Delivery available within 5 km radius.
+- Delivery time: 30–45 minutes depending on load.
+
+FOOD SAFETY:
+- All meat is halal certified.
+- Food is prepared fresh per order.
+
+CANCELLATION:
+- Orders can be cancelled before checkout only.

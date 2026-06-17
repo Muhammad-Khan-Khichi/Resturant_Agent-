@@ -4,7 +4,17 @@ import os
 from livekit.agents import RunContext
 from livekit.agents.llm import function_tool
 from pydantic import Field
-from rag.retriever import search
+from rag.search import search_menu
+import re
+from langchain_mistralai import MistralAIEmbeddings
+from langchain_community.vectorstores import FAISS
+import os
+
+embeddings = MistralAIEmbeddings(model="mistral-embed")
+
+FAISS_DIR = os.path.join(os.path.dirname(__file__), "rag", "faiss_index")
+vector_store = FAISS.load_local(FAISS_DIR, embeddings, allow_dangerous_deserialization=True)
+
 
 
 
@@ -60,37 +70,20 @@ async def to_greeter(context: RunContext_T):
 async def search_knowledge(query: str,context: RunContext_T,) -> str:
     """Advanced RAG: menu"""
     
-    results = search(query)
+    results = search_menu(query)
 
     return "\n".join(results)
 
-def calculate_total(items: list[str]) -> float:
-    """Calculate order total by reading prices from menu.txt."""
-    
 
-    menu_path = os.path.join(os.path.dirname(__file__), "menu.txt")
-    try:
-        with open(menu_path, "r", encoding="utf-8") as f:
-            menu_text = f.read()
-    except Exception as e:
-        print(f"[calculate_total] Could not read menu.txt: {e}")
-        return 0.0
-
-
-    price_map = {}
-    for line in menu_text.splitlines():
-        match = re.search(r'^(.+?)\s{2,}\$(\d+\.?\d*)', line.strip())
-        if match:
-            item_name = match.group(1).strip().lower()
-            price = float(match.group(2))
-            price_map[item_name] = price
-
-
+def calculate_total(items: list[str]) -> int:
+    """Calculate order total using vector DB."""
     total = 0.0
+    
     for item in items:
-        price = price_map.get(item.lower().strip(), 0.0)
-        if price == 0.0:
-            print(f"[calculate_total] Item not found in menu: '{item}'")
-        total += price
-
-    return round(total, 2)
+        results = vector_store.similarity_search(item, k=1)
+        if results:
+            match = re.search(r'\$(\d+\.?\d*)', results[0].page_content)
+            if match:
+                total += float(match.group(1))
+    
+    return total

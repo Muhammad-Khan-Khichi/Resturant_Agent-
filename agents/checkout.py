@@ -2,7 +2,7 @@ from typing import Annotated
 import os
 from livekit.agents import RunContext
 from livekit.agents.llm import function_tool
-from livekit.plugins import openai, cartesia
+from livekit.plugins import openai, elevenlabs
 
 from pydantic import Field
 
@@ -49,7 +49,7 @@ class Checkout(BaseAgent):
                 api_key=os.environ.get("MISTRAL_API_KEY"),
             ),
             tools=[update_name, update_phone, to_greeter],
-            tts=cartesia.TTS(model="cartesia/sonic-3", voice=VOICES["checkout"]),
+            tts=elevenlabs.TTS(),
         )
 
     @function_tool()

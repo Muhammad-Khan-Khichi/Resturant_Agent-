@@ -2,7 +2,7 @@ from typing import Annotated
 import os
 from livekit.agents import RunContext
 from livekit.agents.llm import function_tool
-from livekit.plugins import openai, cartesia
+from livekit.plugins import openai, elevenlabs
 from pydantic import Field
 
 from agents.base import BaseAgent
@@ -40,7 +40,7 @@ class Takeaway(BaseAgent):
                 api_key=os.environ.get("MISTRAL_API_KEY"),
             ),
             tools=[to_greeter, search_knowledge],
-            tts=cartesia.TTS(model="cartesia/sonic-3", voice=VOICES["takeaway"]),
+            tts=elevenlabs.TTS(),
         )
 
     @function_tool()

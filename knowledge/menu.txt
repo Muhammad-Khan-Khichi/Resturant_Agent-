@@ -1,0 +1,33 @@
+BURGER SECTION
+Classic Burger: Grilled beef patty, lettuce, tomato, cheese, mayo sauce. Price: $5
+Chicken Burger: Crispy chicken fillet, lettuce, mayo. Price: $6
+Zinger Burger: Spicy crispy chicken fillet, lettuce, spicy mayo. Price: $7
+Double Cheese Burger: Double beef patty, double cheese, special sauce. Price: $8
+
+FRIES & SIDES
+Regular Fries: Crispy golden fries. Price: $2
+Large Fries: Extra portion crispy fries. Price: $3
+Loaded Fries: Fries topped with cheese sauce and jalapenos. Price: $5
+Chicken Nuggets (6 pcs): Crispy chicken bites. Price: $4
+Chicken Nuggets (12 pcs): Family pack nuggets. Price: $7
+
+PIZZA SECTION
+Margherita Pizza: Cheese, tomato sauce, oregano. Price: $8
+Pepperoni Pizza: Pepperoni slices, cheese, tomato base. Price: $10
+Chicken Supreme Pizza: Chicken, onions, capsicum, cheese. Price: $11
+Veggie Pizza: Capsicum, olives, mushrooms, cheese. Price: $9
+
+DRINKS
+Coke: Chilled soft drink. Price: $1
+Sprite: Lemon-lime soda. Price: $1
+Water Bottle: Mineral water. Price: $1
+Milkshake: Chocolate / Vanilla / Strawberry. Price: $3
+
+DESSERTS
+Ice Cream Cone: Vanilla soft serve. Price: $2
+Sundae: Ice cream with chocolate or caramel topping. Price: $3
+Chocolate Brownie: Warm chocolate brownie cake. Price: $4
+
+COMBOS
+Burger Combo: Burger + Fries + Drink (Save $2)
+Family Meal: 2 Burgers + 2 Fries + 2 Drinks (Save $5)

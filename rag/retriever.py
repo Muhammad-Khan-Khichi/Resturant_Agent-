@@ -1,15 +1,12 @@
-from rag.vectorstore import collection
-from sentence_transformers import SentenceTransformer
-
-model = SentenceTransformer("all-MiniLM-L6-v2")
-
-
-def search(query: str, top_k: int = 3):
-    query_embedding = model.encode(query).tolist()
-
-    results = collection.query(
-        query_embeddings=[query_embedding],
-        n_results=top_k
-    )
-
-    return results["documents"][0]
+def search(query: str) -> list[str]:
+    """Read menu from file and return relevant sections."""
+    import os
+    
+    menu_path = os.path.join(os.path.dirname(__file__), "..", "menu.txt")
+    
+    try:
+        with open(menu_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        return [content]
+    except Exception as e:
+        return [f"Menu not available: {e}"]

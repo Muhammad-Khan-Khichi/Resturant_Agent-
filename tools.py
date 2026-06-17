@@ -1,9 +1,12 @@
 from typing import Annotated
-
+import re
+import os
 from livekit.agents import RunContext
 from livekit.agents.llm import function_tool
 from pydantic import Field
 from rag.retriever import search
+
+
 
 from userdata import UserData
 
@@ -55,34 +58,39 @@ async def to_greeter(context: RunContext_T):
 
 @function_tool()
 async def search_knowledge(query: str,context: RunContext_T,) -> str:
-    """Advanced RAG: menu, ingredients, FAQ, policies."""
+    """Advanced RAG: menu"""
     
     results = search(query)
 
     return "\n".join(results)
 
-@function_tool()
-async def _calculate_total(self, items: list[str]) -> float:
-    """Calculate total by querying ChromaDB for each item's price."""
-    import re
-    from rag.vectorstore import collection 
+def calculate_total(items: list[str]) -> float:
+    """Calculate order total by reading prices from menu.txt."""
     
-    collection = collection()
+
+    menu_path = os.path.join(os.path.dirname(__file__), "menu.txt")
+    try:
+        with open(menu_path, "r", encoding="utf-8") as f:
+            menu_text = f.read()
+    except Exception as e:
+        print(f"[calculate_total] Could not read menu.txt: {e}")
+        return 0.0
+
+
+    price_map = {}
+    for line in menu_text.splitlines():
+        match = re.search(r'^(.+?)\s{2,}\$(\d+\.?\d*)', line.strip())
+        if match:
+            item_name = match.group(1).strip().lower()
+            price = float(match.group(2))
+            price_map[item_name] = price
+
+
     total = 0.0
-    
     for item in items:
-        try:
-            results = collection.query(
-                query_texts=[item],
-                n_results=1,
-            )
-            if results and results["documents"] and results["documents"][0]:
-                doc_text = results["documents"][0][0]
-                # Extract price like "Price: $5" from the text
-                match = re.search(r'Price:\s*\$(\d+\.?\d*)', doc_text)
-                if match:
-                    total += float(match.group(1))
-        except Exception:
-            pass
-    
+        price = price_map.get(item.lower().strip(), 0.0)
+        if price == 0.0:
+            print(f"[calculate_total] Item not found in menu: '{item}'")
+        total += price
+
     return round(total, 2)

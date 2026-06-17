@@ -1,0 +1,23 @@
+Q: What is Zinger Burger?
+A: A spicy crispy chicken burger with spicy mayo sauce.
+
+Q: Do you offer vegetarian options?
+A: Yes, we offer Veggie Pizza, Fries, and desserts.
+
+Q: What is included in a combo meal?
+A: Combo includes a main item, fries, and a drink at discounted price.
+
+Q: Do you deliver?
+A: Yes, delivery is available within 5 km radius.
+
+Q: What is the difference between takeaway and delivery?
+A: Takeaway means customer picks up order. Delivery is home drop-off.
+
+Q: Are your ingredients halal?
+A: Yes, all meat is halal certified.
+
+Q: Can I modify my order?
+A: Yes, before checkout you can change items.
+
+Q: Do you have spicy food?
+A: Yes, Zinger Burger and spicy fries are available.

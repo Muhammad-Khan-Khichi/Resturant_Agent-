@@ -6,7 +6,7 @@ from livekit.plugins import silero
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 from livekit.plugins import openai
 from livekit.plugins import cartesia
-from livekit.plugins import elevenlabs
+from livekit.plugins import cartesia
 from livekit.plugins import assemblyai
 
 from agents import Greeter, Reservation, Takeaway, Checkout
@@ -39,7 +39,7 @@ async def entrypoint(ctx: JobContext):
             base_url="https://api.mistral.ai/v1",
             api_key=os.environ.get("MISTRAL_API_KEY"),
         ),
-        tts=elevenlabs.TTS(),
+        tts=cartesia.TTS(),
         vad=silero.VAD.load(),
         turn_detection=MultilingualModel(), 
         max_tool_steps=5,

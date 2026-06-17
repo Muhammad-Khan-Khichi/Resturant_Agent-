@@ -1,0 +1,95 @@
+============================================================
+               THE GRILL HOUSE — MENU
+============================================================
+
+------------------------------------------------------------
+  BURGERS
+------------------------------------------------------------
+Classic Burger          $5
+  Juicy grilled beef patty, fresh lettuce, tomato,
+  melted cheese & creamy mayo
+
+Chicken Burger          $6
+  Golden crispy chicken fillet, crisp lettuce
+  & signature mayo
+
+Zinger Burger           $7
+  Fiery crispy chicken fillet, fresh lettuce
+  & house spicy mayo
+
+Double Cheese Burger    $8
+  Double beef patty, double melted cheese
+  & our secret special sauce
+
+------------------------------------------------------------
+  FRIES & SIDES
+------------------------------------------------------------
+Regular Fries           $2
+  Crispy golden fries, lightly salted
+
+Large Fries             $3
+  Extra-large portion of crispy golden fries
+
+Loaded Fries            $5
+  Crispy fries smothered in cheese sauce & pickled jalapenos
+
+Chicken Nuggets 6 pcs   $4
+  Tender crispy chicken bites with dipping sauce
+
+Chicken Nuggets 12 pcs  $7
+  Family-size crispy chicken bites with dipping sauce
+
+------------------------------------------------------------
+  PIZZAS
+------------------------------------------------------------
+Margherita Pizza        $8
+  Classic tomato base, mozzarella cheese & fresh oregano
+
+Pepperoni Pizza         $10
+  Generous pepperoni slices, mozzarella & rich tomato base
+
+Chicken Supreme Pizza   $11
+  Seasoned chicken, onions, capsicum & melted mozzarella
+
+Veggie Delight Pizza    $9
+  Capsicum, black olives, mushrooms & melted mozzarella
+
+------------------------------------------------------------
+  DRINKS
+------------------------------------------------------------
+Coke                    $1
+  Ice-cold refreshing Coca-Cola
+
+Sprite                  $1
+  Chilled lemon-lime soda
+
+Water Bottle            $1
+  Chilled mineral water
+
+Milkshake               $3
+  Rich & creamy — Chocolate, Vanilla or Strawberry
+
+------------------------------------------------------------
+  DESSERTS
+------------------------------------------------------------
+Ice Cream Cone          $2
+  Smooth vanilla soft serve in a crispy cone
+
+Sundae                  $3
+  Creamy ice cream with warm chocolate or caramel drizzle
+
+Chocolate Brownie       $4
+  Warm, fudgy chocolate brownie — served fresh
+
+
+Burger Combo            Save $2
+  Any Burger + Regular Fries + Drink
+
+Family Meal             Save $5
+  2 Burgers + 2 Regular Fries + 2 Drinks
+
+Pizza Night             Save $2
+  Any Pizza + 2 Drinks
+
+Nugget Box              Save $3
+  12 Nuggets + Large Fries + 2 Drinks

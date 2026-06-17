@@ -7,7 +7,7 @@ from pydantic import Field
 
 from agents.base import BaseAgent
 from config import VOICES
-from tools import to_greeter, search_knowledge
+from tools import to_greeter, search_knowledge, _calculate_total
 from userdata import UserData
 
 RunContext_T = RunContext[UserData]
@@ -39,7 +39,7 @@ class Takeaway(BaseAgent):
                 base_url="https://api.mistral.ai/v1",
                 api_key=os.environ.get("MISTRAL_API_KEY"),
             ),
-            tools=[to_greeter, search_knowledge],
+            tools=[to_greeter, search_knowledge, _calculate_total],
             tts=elevenlabs.TTS(),
         )
 
@@ -62,10 +62,3 @@ class Takeaway(BaseAgent):
         if not context.userdata.order:
             return "No order found. Please take the customer's order first."
         return await self._transfer_to_agent("checkout", context)
-
-    def _calculate_total(self, items: list[str]) -> float:
-        prices = {"pizza": 10, "salad": 5, "ice cream": 3, "coffee": 2}
-        total = 0.0
-        for item in items:
-            total += prices.get(item.lower(), 0)
-        return total

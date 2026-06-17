@@ -7,7 +7,7 @@ from pydantic import Field
 
 from agents.base import BaseAgent
 from config import VOICES
-from tools import to_greeter, search_knowledge, _calculate_total
+from tools import to_greeter, search_knowledge, calculate_total
 from userdata import UserData
 
 RunContext_T = RunContext[UserData]
@@ -39,7 +39,7 @@ class Takeaway(BaseAgent):
                 base_url="https://api.mistral.ai/v1",
                 api_key=os.environ.get("MISTRAL_API_KEY"),
             ),
-            tools=[to_greeter, search_knowledge, _calculate_total],
+            tools=[to_greeter, search_knowledge],
             tts=elevenlabs.TTS(),
         )
 
@@ -52,7 +52,7 @@ class Takeaway(BaseAgent):
         """Called when the user specifies what they want to order.
         Only call this do NOT call to_checkout in the same turn."""
         context.userdata.order = items
-        total = self._calculate_total(items)
+        total = calculate_total(items)
         return f"Order updated: {items}. Total: ${total}. Ask if they want anything else."
 
     @function_tool()

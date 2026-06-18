@@ -26,7 +26,9 @@ class BaseAgent(Agent):
             ).truncate(max_items=8)
             existing_ids = {item.id for item in chat_ctx.items}
             items_copy = [
-                item for item in truncated_chat_ctx.items if item.id not in existing_ids
+                item
+                for item in truncated_chat_ctx.items
+                if item.id not in existing_ids
             ]
             chat_ctx.items.extend(items_copy)
 
@@ -34,7 +36,6 @@ class BaseAgent(Agent):
             role="system",
             content=(
                 f"[INTERNAL CONTEXT — DO NOT READ ALOUD OR MENTION TO THE USER]\n"
-                # f"Agent: {agent_name}\n"
                 f"Collected data so far:\n{userdata.summarize()}\n"
                 f"Use this silently to continue the conversation. "
                 f"Never say 'unknown', never recite this data to the user."
@@ -47,6 +48,26 @@ class BaseAgent(Agent):
         self, name: str, context: RunContext_T
     ) -> tuple[Agent, str]:
         userdata = context.userdata
+        from_agent = self.__class__.__name__
+
         userdata.prev_agent = context.session.current_agent
         next_agent = userdata.agents[name]
+
+
+        try:
+            from api.database import AsyncSessionLocal
+            from api import db_service
+
+            room_name = context.session.room.name
+            async with AsyncSessionLocal() as db:
+                await db_service.save_transition(
+                    db,
+                    room_name=room_name,
+                    from_agent=from_agent,
+                    to_agent=name,
+                )
+        except Exception as e:
+    
+            logger.warning(f"Failed to save transition to DB: {e}")
+
         return next_agent, f"Transferring to {name}."
